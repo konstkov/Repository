@@ -1,4 +1,4 @@
-print("Enter three integer numbers: ")
+print("Enter three integer numbers, please: ")
 number1 = int(input())
 number2 = int(input())
 number3 = int(input())
