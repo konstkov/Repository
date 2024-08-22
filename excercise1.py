@@ -1,2 +1,1 @@
-name = input("bla")
-print(f"bla: {name}")
+name = print("Hello, Konstantin Kovalev!")
