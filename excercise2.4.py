@@ -1,0 +1,7 @@
+print("Enter three integer numbers: ")
+number1 = int(input())
+number2 = int(input())
+number3 = int(input())
+print(f"The sum of these is: {number1 + number2 + number3}")
+print(f"The product of these is: {number1 * number2 * number3}")
+print(f"The average of these is {(number1 * number2 * number3)/3}")
