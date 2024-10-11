@@ -1,10 +1,10 @@
 import random
-user_input=int(input("Enter a number of sides on a dice: "))
-def dice(user_input):
-    return
-while True:
-    n=random.randint(1,user_input)
-    print(n)
-    if n == user_input:
-        break
-dice(0)
+sides=int(input("Enter a number of sides"))
+def roll(sides):
+    return random.randint(1, sides)
+def main():
+    result = 0
+    while result != sides:
+        result = roll(sides)
+        print(result)
+main()

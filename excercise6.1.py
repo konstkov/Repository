@@ -1,12 +1,14 @@
 import random
-def dice():
-    return
-while True:
-    n=random.randint(1,6)
-    print(n)
-    if n == 6:
-        break
-dice()
+def roll():
+    return random.randint(1, 6)
+def main():
+    result = 0
+    while result != 6:
+        result = roll()
+        print(result)
+main()
+
+
 
 
 
