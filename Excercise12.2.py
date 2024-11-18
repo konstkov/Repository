@@ -15,28 +15,35 @@ import json
 import requests
 
 
-API_key=("23ed1ac24a7a5a0f7998cce76399111e")
+API_key=("23ed1ac24a7a5a0f7998cce76399111e") #Insert your API key here
 city_name=input("Enter the name of the city: ")
 
-# Request template: https://api.tvmaze.com/search/shows?q=girls
 request = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={API_key}&units=metric"
-
-
 
 try:
     response = requests.get(request)
     if response.status_code==200:
         json_response = response.json()
         # print(json.dumps(json_response, indent=2))
-        data=json_response['main']
+        data=json_response["main"]
+        weather_description=json_response["weather"][0]["description"]
         for key, value in data.items():
             if key == 'temp' or key == 'feels_like' or key == 'temp_min' or key == 'temp_max':
                 print(f"{key.capitalize()}: {value} degrees Celcius")
             elif key == 'pressure':
                 print(f"{key.capitalize()}: {value} mb")
             elif key == 'humidity':
-                print(f"{key.capitalize()}: {value} %RH")
-            elif key == 'sea_level' or key == 'grnd_level':
-                print(f"{key.capitalize()}: {value} meters")
+                print(f"{key.capitalize()}: {value} %rH")
+            else:
+                print(f"{weather_description.capitalize()}")
+                break
+
+
 except requests.exceptions.RequestException as e:
     print ("Request could not be completed.")
+
+#HUOM!!! Celcius to Kelvin conversion could be done using this function:
+# def kelvin_to_celsius(kelvin):
+    #return kelvin - 273.15
+#However, I found it's not necessary since I typed &units=metric at
+#the end of URL so it automatically returns temperature values in degrees Celcius
