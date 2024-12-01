@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <script src="3.js" defer></script>
+</head>
+<body>
+    <h1>Task 3</h1>
+    <ul id="target"></ul>
+<script>
+    let ul=document.getElementById("target")
+    const names=['John', 'Paul', 'Jones']
+    names.forEach((item) => {
+  let li = document.createElement("li");
+  let text = document.createTextNode(item);
+  li.appendChild(text);
+  document.getElementById("target").appendChild(li);
+})
+</script>
+</body>
+</html>

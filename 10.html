@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 10</title>
+    <script src="10.js" defer></script>
+</head>
+
+<body>
+<h1>Task 10</h1>
+<form id="source">
+    <input id="firstname" type="text" name="firstname" placeholder="Enter first name">
+    <br>
+    <input id="lastname" type="text" name="lastname" placeholder="Enter last name">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<p id="target"></p>
+
+<script>
+  function Submit(event) {
+    event.preventDefault();
+
+    const firstName = document.querySelector('input[name="firstname"]').value;
+    const lastName = document.querySelector('input[name="lastname"]').value;
+
+    const target = document.getElementById('target');
+    target.textContent = `Your name is ${firstName} ${lastName}`;
+  }
+
+  const form = document.getElementById('source');
+
+  form.addEventListener('submit', Submit);
+</script>
+</body>
+
+</html>
