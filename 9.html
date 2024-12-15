@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <script src="9.js" defer></script>
+</head>
+
+<body>
+    <h1>Task 9</h1>
+    <input id="calculation" type="text" placeholder="enter calculation">
+    <br>
+    <button id="start">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function OnChange() {
+                const input = document.getElementById("calculation");
+
+                if (!input) {
+                    console.error("Element with ID 'calculation' not found.");
+                    return;
+                }
+
+                console.log("Raw input value:", input.value);
+
+                let normalizedInput = input.value.trim();
+
+                normalizedInput = normalizedInput.replace(/–/g, '-');
+                console.log("Normalized input:", normalizedInput);
+
+                let words;
+                if (normalizedInput.includes(' ')) {
+                    words = normalizedInput.split(/\s+/);
+                } else {
+                    words = normalizedInput.split(/([+\-*/])/);
+                    words = words.filter(word => word.trim() !== "");
+                }
+
+                console.log("Input split into words:", words);
+
+                if (words.length !== 3) {
+                    console.log("Invalid input format. Expected format: 'number operator number'.");
+                    return;
+                }
+
+                let number1 = parseInt(words[0], 10);
+                let number2 = parseInt(words[2], 10);
+                let operator = words[1];
+                console.log("number1:", number1, "number2:", number2, "operator:", operator);
+
+                if (isNaN(number1) || isNaN(number2)) {
+                    console.log("One or both of the numbers are invalid.");
+                    return;
+                }
+
+                let result;
+
+                switch (operator) {
+                    case '+':
+                        result = number1 + number2;
+                        break;
+                    case '-':
+                        result = number1 - number2;
+                        break;
+                    case '*':
+                        result = number1 * number2;
+                        break;
+                    case '/':
+                        if (number2 === 0) {
+                            result = "Cannot divide by zero";
+                        } else {
+                            result = number1 / number2;
+                        }
+                        break;
+                    default:
+                        result = "Invalid operator";
+                        break;
+                }
+
+                document.getElementById('result').innerHTML = result;
+            }
+
+            let click = document.getElementById('start');
+            click.addEventListener('click', OnChange);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <script src="5.js" defer></script>
+    <link href="5.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>Task 5</h1>
+    </header>
+    <main>
+        <section id="pictures">
+            <!-- add articles here -->
+            <script>
+
+              document.addEventListener('DOMContentLoaded', () => {
+                picArray.forEach(array => {
+                  const article = document.getElementById('pictures');
+                  const Array = document.createElement('array1');
+                  const Dialog = document.getElementById('dialog');
+                  article.appendChild(Array);
+                  const title = document.createElement('h2');
+                  title.textContent = array.title;
+                  Array.appendChild(title);
+                  const imgLarge = document.createElement('img');
+                  imgLarge.src = array.image.large;
+                  imgLarge.alt = 'large-image';
+                  article.appendChild(imgLarge);
+                  const imgMedium = document.createElement('img');
+                  imgMedium.src = array.image.medium;
+                  imgLarge.alt = 'medium-image';
+                  Dialog.appendChild(imgMedium);
+                  Array.appendChild(imgLarge);
+                  const figcaption = document.createElement('figcaption');
+                  figcaption.textContent = array.caption;
+                  Array.appendChild(figcaption);
+                  const p = document.createElement('p');
+                  p.textContent = array.description;
+                  Array.appendChild(p);
+                });
+              });
+
+
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+</div>
+<dialog id="dialog">
+    <span>&#x2715;</span>
+    <img>
+</dialog>
+</body>
+
+</html>
