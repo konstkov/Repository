@@ -36,7 +36,7 @@
             <mxPoint x="590" y="540" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KyHlDZHbgabK7WFPE2nZ-5" value="B1 = 0&amp;nbsp;&lt;div&gt;OR&lt;/div&gt;&lt;div&gt;B2 = 0&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="KyHlDZHbgabK7WFPE2nZ-5" value="B1 = 0&amp;nbsp;&lt;div&gt;AND&lt;/div&gt;&lt;div&gt;B2 = 0&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="260" y="500" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="KyHlDZHbgabK7WFPE2nZ-13" value="0" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
